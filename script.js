@@ -1,346 +1,381 @@
-// ============================================
-// SMOOTH SCROLLING FOR NAVIGATION LINKS
-// ============================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+/**
+ * SparkClean Oregon - JavaScript
+ * Professional Business Website
+ */
+
+(function() {
+    'use strict';
+
+    // ===========================
+    // INITIALIZATION
+    // ===========================
+    document.addEventListener('DOMContentLoaded', function() {
+        initMobileMenu();
+        initSmoothScrolling();
+        initQuoteModal();
+        initForms();
+        initScrollAnimations();
+        initNavbarScroll();
+        initAccessibility();
+        initLazyLoading();
+    });
+
+    // ===========================
+    // MOBILE MENU
+    // ===========================
+    function initMobileMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
         
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        if (!hamburger || !navMenu) return;
+        
+        hamburger.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
+            this.classList.toggle('active');
             
-            // Close modal if it's the quote modal
-            const modal = document.getElementById('quote-modal');
-            if (modal && modal.open) {
+            if (!isExpanded) {
+                navMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = '';
+            }
+        });
+        
+        document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                navMenu.style.display = '';
+            });
+        });
+    }
+
+    // ===========================
+    // SMOOTH SCROLLING
+    // ===========================
+    function initSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    const modal = document.getElementById('quote-modal');
+                    if (modal && modal.open) {
+                        modal.close();
+                    }
+                }
+            });
+        });
+    }
+
+    // ===========================
+    // QUOTE MODAL
+    // ===========================
+    function initQuoteModal() {
+        const modal = document.getElementById('quote-modal');
+        const closeBtn = document.querySelector('.modal-close');
+        
+        if (!modal) return;
+        
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                modal.close();
+            });
+        }
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
                 modal.close();
             }
-        }
-    });
-});
-
-// ============================================
-// FORM SUBMISSION HANDLING
-// ============================================
-
-// Contact Form Submission
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Collect form data
-        const formData = {
-            name: this.querySelector('input[placeholder*="Name"]').value,
-            email: this.querySelector('input[placeholder*="Email"]').value,
-            phone: this.querySelector('input[placeholder*="Phone"]').value,
-            message: this.querySelector('textarea[placeholder*="needs"]').value,
-            timestamp: new Date().toISOString()
-        };
-        
-        // Log form submission (in a real app, this would send to a backend)
-        console.log('Contact form submitted:', formData);
-        
-        // Show success message
-        showNotification('Thank you! We\'ll contact you within 24 hours.');
-        
-        // Reset form
-        this.reset();
-    });
-}
-
-// Quote Form Submission
-const quoteForm = document.getElementById('quote-form');
-if (quoteForm) {
-    quoteForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Collect form data
-        const formData = {
-            name: this.querySelector('input[placeholder*="John"]').value,
-            email: this.querySelector('input[placeholder*="john"]').value,
-            phone: this.querySelector('input[placeholder*="(305)"]').value,
-            serviceType: this.querySelector('select:nth-of-type(1)').value,
-            propertySize: this.querySelector('select:nth-of-type(2)').value,
-            details: this.querySelector('textarea[placeholder*="special"]').value || 'No additional details',
-            timestamp: new Date().toISOString()
-        };
-        
-        // Validate form
-        if (!formData.name || !formData.email || !formData.phone || !formData.serviceType || !formData.propertySize) {
-            showNotification('Please fill in all required fields.', 'error');
-            return;
-        }
-        
-        // Log form submission (in a real app, this would send to a backend)
-        console.log('Quote form submitted:', formData);
-        
-        // Show success message
-        showNotification('Perfect! We\'ll send you a free quote within 24 hours.');
-        
-        // Close modal
-        document.getElementById('quote-modal').close();
-        
-        // Reset form
-        this.reset();
-    });
-}
-
-// ============================================
-// NOTIFICATION SYSTEM
-// ============================================
-function showNotification(message, type = 'success') {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 16px 24px;
-        background-color: ${type === 'success' ? '#4caf50' : '#f44336'};
-        color: white;
-        border-radius: 6px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        z-index: 1000;
-        font-size: 14px;
-        font-weight: 500;
-        animation: slideInRight 0.3s ease;
-    `;
-    
-    // Add animation styles if not already in document
-    if (!document.querySelector('style[data-notification]')) {
-        const style = document.createElement('style');
-        style.setAttribute('data-notification', 'true');
-        style.textContent = `
-            @keyframes slideInRight {
-                from {
-                    transform: translateX(400px);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-    
-    // Add to page
-    document.body.appendChild(notification);
-    
-    // Remove after 4 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideInRight 0.3s ease reverse';
-        setTimeout(() => notification.remove(), 300);
-    }, 4000);
-}
-
-// ============================================
-// MOBILE MENU HANDLING
-// ============================================
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-if (hamburger) {
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        this.classList.toggle('active');
-    });
-}
-
-// Close mobile menu when a link is clicked
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-        if (hamburger) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    });
-});
-
-// ============================================
-// MODAL MANAGEMENT
-// ============================================
-const quoteModal = document.getElementById('quote-modal');
-
-// Close modal when clicking outside
-if (quoteModal) {
-    quoteModal.addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.close();
-        }
-    });
-}
-
-// ============================================
-// ANALYTICS TRACKING
-// ============================================
-function trackEvent(eventName, eventData = {}) {
-    const eventInfo = {
-        event: eventName,
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent,
-        ...eventData
-    };
-    
-    // Log to console (in a real app, this would send to analytics service)
-    console.log('Analytics Event:', eventInfo);
-}
-
-// Track CTA button clicks
-document.querySelectorAll('.cta-button, .sticky-cta').forEach(button => {
-    button.addEventListener('click', function() {
-        trackEvent('cta_click', {
-            buttonText: this.textContent.trim(),
-            buttonLocation: this.closest('section')?.id || 'sticky'
         });
-    });
-});
+    }
 
-// Track quote form opens
-if (quoteModal) {
-    document.querySelectorAll('[onclick*="quote-modal"]').forEach(element => {
-        element.addEventListener('click', function() {
-            trackEvent('quote_modal_opened', {
-                triggerElement: this.textContent.trim()
+    // ===========================
+    // FORMS
+    // ===========================
+    function initForms() {
+        const contactForm = document.getElementById('contact-form');
+        const quoteForm = document.getElementById('quote-form');
+        
+        if (contactForm) {
+            setupFormspreeForm(contactForm);
+        }
+        
+        if (quoteForm) {
+            setupFormspreeForm(quoteForm);
+        }
+    }
+
+    function setupFormspreeForm(form) {
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const statusDiv = form.querySelector('.form-status');
+        const formAction = form.getAttribute('action');
+        
+        if (!submitBtn) return;
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm(form)) {
+                showFormStatus(statusDiv, 'Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+            
+            if (statusDiv) {
+                statusDiv.className = 'form-status';
+                statusDiv.textContent = '';
+            }
+            
+            try {
+                if (formAction && formAction.includes('formspree.io')) {
+                    const formData = new FormData(form);
+                    const response = await fetch(formAction, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        showFormStatus(statusDiv, getSuccessMessage(form), 'success');
+                        form.reset();
+                        
+                        if (document.getElementById('quote-modal')) {
+                            setTimeout(function() {
+                                document.getElementById('quote-modal').close();
+                            }, 2000);
+                        }
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } else {
+                    showFormStatus(statusDiv, getSuccessMessage(form), 'success');
+                    form.reset();
+                }
+            } catch (error) {
+                showFormStatus(statusDiv, 'Something went wrong. Please try again or contact us directly.', 'error');
+            } finally {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    function validateForm(form) {
+        const requiredFields = form.querySelectorAll('[required]');
+        let isValid = true;
+        
+        requiredFields.forEach(function(field) {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add('invalid');
+            } else {
+                field.classList.remove('invalid');
+            }
+            
+            if (field.type === 'email' && field.value && !isValidEmail(field.value)) {
+                isValid = false;
+                field.classList.add('invalid');
+            }
+        });
+        
+        return isValid;
+    }
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showFormStatus(element, message, type) {
+        if (!element) return;
+        
+        element.className = 'form-status ' + type;
+        element.textContent = message;
+        
+        if (type === 'success') {
+            element.setAttribute('tabindex', '0');
+            element.focus();
+        }
+    }
+
+    function getSuccessMessage(form) {
+        if (form.id === 'contact-form') {
+            return 'Thank you! We\'ll get back to you within 24 hours.';
+        }
+        return 'Quote request sent! We\'ll contact you within 24 hours with pricing.';
+    }
+
+    // ===========================
+    // SCROLL ANIMATIONS
+    // ===========================
+    function initScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.service-card, .pricing-card, .trust-card, .testimonial-card, .step, .comparison-pair');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        animatedElements.forEach(function(el) {
+            el.classList.add('animate-on-scroll');
+            observer.observe(el);
+        });
+    }
+
+    // ===========================
+    // NAVBAR SCROLL EFFECT
+    // ===========================
+    function initNavbarScroll() {
+        const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
+        
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        }, { passive: true });
+    }
+
+    // ===========================
+    // ACCESSIBILITY
+    // ===========================
+    function initAccessibility() {
+        const modal = document.getElementById('quote-modal');
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal && modal.open) {
+                modal.close();
+            }
+            
+            if (e.key === 'Tab' && modal && modal.open) {
+                handleModalFocusTrap(e, modal);
+            }
+        });
+        
+        document.querySelectorAll('.service-card, .trust-card').forEach(function(card) {
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
             });
         });
-    });
-}
-
-// Track navigation clicks
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-        trackEvent('nav_click', {
-            section: this.getAttribute('href')
-        });
-    });
-});
-
-// ============================================
-// LAZY LOADING IMAGES
-// ============================================
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// ============================================
-// FORM FIELD VALIDATION
-// ============================================
-function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function validatePhone(phone) {
-    const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
-    return phoneRegex.test(phone.replace(/\s/g, ''));
-}
-
-// Add real-time validation to form fields
-document.querySelectorAll('input[type="email"]').forEach(input => {
-    input.addEventListener('blur', function() {
-        if (this.value && !validateEmail(this.value)) {
-            this.style.borderColor = '#f44336';
-        } else {
-            this.style.borderColor = '';
-        }
-    });
-});
-
-document.querySelectorAll('input[type="tel"]').forEach(input => {
-    input.addEventListener('blur', function() {
-        if (this.value && !validatePhone(this.value)) {
-            this.style.borderColor = '#f44336';
-        } else {
-            this.style.borderColor = '';
-        }
-    });
-});
-
-// ============================================
-// PAGE LOAD EFFECTS
-// ============================================
-window.addEventListener('load', function() {
-    // Add animation to cards when page loads
-    const cards = document.querySelectorAll('.service-card, .pricing-card, .testimonial-card, .trust-card');
-    cards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.animation = 'fadeInUp 0.6s ease forwards';
-        }, index * 100);
-    });
-});
-
-// Add animation style if not present
-if (!document.querySelector('style[data-animations]')) {
-    const style = document.createElement('style');
-    style.setAttribute('data-animations', 'true');
-    style.textContent = `
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        img.loaded {
-            animation: fadeInUp 0.6s ease;
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-// ============================================
-// SCROLL EFFECTS
-// ============================================
-let scrollTimeout;
-window.addEventListener('scroll', function() {
-    clearTimeout(scrollTimeout);
-    
-    // Track scroll position for analytics
-    scrollTimeout = setTimeout(() => {
-        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercentage > 50) {
-            trackEvent('page_scroll_50_percent');
-        }
-    }, 1000);
-});
-
-// ============================================
-// ACCESSIBILITY ENHANCEMENTS
-// ============================================
-// Keyboard navigation for modal
-document.addEventListener('keydown', function(e) {
-    const modal = document.getElementById('quote-modal');
-    if (modal && modal.open && e.key === 'Escape') {
-        modal.close();
     }
-});
 
-// ============================================
-// INITIALIZATION
-// ============================================
-console.log('SparkClean Services - Website initialized successfully');
+    function handleModalFocusTrap(e, modal) {
+        const focusableElements = modal.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            }
+        } else {
+            if (document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
+    }
+
+    // ===========================
+    // LAZY LOADING
+    // ===========================
+    function initLazyLoading() {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                        }
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px'
+            });
+            
+            lazyImages.forEach(function(img) {
+                imageObserver.observe(img);
+            });
+        }
+    }
+
+    // ===========================
+    // UTILITY FUNCTIONS
+    // ===========================
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            const context = this;
+            const args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                func.apply(context, args);
+            }, wait);
+        };
+    }
+
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(function() {
+                    inThrottle = false;
+                }, limit);
+            }
+        };
+    }
+
+})();

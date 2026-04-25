@@ -3,307 +3,691 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SparkClean Services - Professional Cleaning in Miami, FL</title>
-    <meta name="description" content="Professional cleaning services in Miami, FL. Trusted for home, office, and deep cleaning. Get a free quote today!">
+    <title>SparkClean Oregon - Professional House Cleaning Services in Portland, OR & Surrounding Areas</title>
+    <meta name="description" content="Oregon's trusted cleaning service since 2018. Insured, background-checked cleaners. Home, office & deep cleaning in Portland, Beaverton, Lake Oswego, Eugene & more. 4.9 stars from 120+ customers. Free quotes available.">
+    <meta name="keywords" content="cleaning service Portland OR, house cleaning Oregon, office cleaning Beaverton, deep cleaning Lake Oswego, move-in cleaning Eugene, professional cleaners Salem Oregon">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SparkClean Services">
+    <meta name="geo.region" content="US-OR">
+    <meta name="geo.placename" content="Portland">
+    
+    <link rel="canonical" href="https://sparkcleanoregon.com">
+    
     <link rel="stylesheet" href="styles.css">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://sparkcleanoregon.com",
+        "name": "SparkClean Services",
+        "description": "Professional residential and commercial cleaning services in Oregon. Serving Portland, Beaverton, Lake Oswego, Eugene, Salem, and surrounding areas since 2018.",
+        "url": "https://sparkcleanoregon.com",
+        "telephone": "+1-503-555-7890",
+        "email": "hello@sparkcleanoregon.com",
+        "priceRange": "$$",
+        "servesCuisine": "CleaningService",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Portland",
+            "addressRegion": "OR",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "45.5152",
+            "longitude": "-122.6784"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday"],
+                "opens": "09:00",
+                "closes": "17:00"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "120"
+        },
+        "areaServed": [
+            "Portland",
+            "Beaverton",
+            "Lake Oswego",
+            "Eugene",
+            "Salem",
+            "Tigard",
+            "Gresham",
+            "Hillsboro",
+            "West Linn",
+            "Oregon City"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Cleaning Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Home Cleaning"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Office Cleaning"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Deep Cleaning"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <div class="nav-brand">
-                <span class="logo-text">✨ SparkClean</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#pricing" class="nav-link">Pricing</a></li>
-                <li><a href="#why-us" class="nav-link">Why Us</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <a href="#" class="nav-brand" aria-label="SparkClean - Go to homepage">
+                <span class="logo-icon" aria-hidden="true">✨</span>
+                <span class="logo-text">SparkClean</span>
+            </a>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#services" class="nav-link" role="menuitem">Services</a></li>
+                <li role="none"><a href="#pricing" class="nav-link" role="menuitem">Pricing</a></li>
+                <li role="none"><a href="#how-it-works" class="nav-link" role="menuitem">How It Works</a></li>
+                <li role="none"><a href="#testimonials" class="nav-link" role="menuitem">Reviews</a></li>
+                <li role="none"><a href="#contact" class="nav-link nav-link-cta" role="menuitem">Get Quote</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Professional Cleaning Services You Can Trust</h1>
-            <p class="hero-subtitle">Trusted by hundreds of Miami families and businesses. Reliable, insured, and always exceptional results.</p>
-            <button class="cta-button hero-cta" onclick="document.getElementById('quote-modal').showModal()">Get a Free Quote</button>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop" alt="Professional cleaning service">
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">We offer comprehensive cleaning solutions tailored to your needs</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Home Cleaning</h3>
-                    <p>Regular weekly or bi-weekly cleaning for a spotless home. We handle bathrooms, kitchens, floors, and more.</p>
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge" aria-label="Business establishment date">
+                        <span class="badge-icon" aria-hidden="true">🏆</span>
+                        <span>Serving Oregon since 2018</span>
+                    </div>
+                    
+                    <h1 id="hero-title" class="hero-title">Professional House Cleaning Services in Oregon</h1>
+                    
+                    <div class="hero-rating" role="img" aria-label="Customer rating: 4.9 out of 5 stars from 120 customers">
+                        <div class="stars" aria-hidden="true">★★★★★</div>
+                        <span class="rating-text">4.9 stars from <strong>120+ customers</strong></span>
+                    </div>
+                    
+                    <p class="hero-subtitle">Trusted, insured, and background-checked cleaners serving Portland, Beaverton, Lake Oswego, Eugene, Salem & surrounding areas. Experience the SparkClean difference today.</p>
+                    
+                    <button class="cta-button hero-cta" onclick="document.getElementById('quote-modal').showModal()" aria-label="Open quote request form">
+                        Get Your Free Quote
+                    </button>
+                    
+                    <div class="trust-badges" role="list" aria-label="Trust indicators">
+                        <div class="trust-badge" role="listitem">
+                            <span class="badge-check" aria-hidden="true">✔</span>
+                            <span>Fully Insured</span>
+                        </div>
+                        <div class="trust-badge" role="listitem">
+                            <span class="badge-check" aria-hidden="true">✔</span>
+                            <span>Background Checked</span>
+                        </div>
+                        <div class="trust-badge" role="listitem">
+                            <span class="badge-check" aria-hidden="true">✔</span>
+                            <span>Same-Day Service</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Office Cleaning</h3>
-                    <p>Keep your workplace professional and hygienic. We offer flexible scheduling around your business hours.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>Deep Cleaning</h3>
-                    <p>Thorough cleaning for every corner. Perfect for spring cleaning or before special occasions.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h3>Move-In/Move-Out</h3>
-                    <p>Let us handle the cleaning hassle during your move. We make sure your new place is spotless.</p>
+                
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=450&fit=crop" 
+                         alt="Professional cleaner making an Oregon home spotless" 
+                         loading="eager"
+                         width="600"
+                         height="450">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title">Simple, Transparent Pricing</h2>
-            <p class="section-subtitle">No hidden fees. No surprises.</p>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Basic</h3>
-                    <p class="price-tag">$79<span>/visit</span></p>
-                    <ul class="pricing-features">
-                        <li>✓ Up to 2 hours</li>
-                        <li>✓ General cleaning</li>
-                        <li>✓ 1 bathroom</li>
-                        <li>✓ 1-2 bedrooms</li>
-                    </ul>
-                    <button class="cta-button secondary-cta" onclick="document.getElementById('quote-modal').showModal()">Get Quote</button>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <h3>Standard</h3>
-                    <p class="price-tag">$129<span>/visit</span></p>
-                    <ul class="pricing-features">
-                        <li>✓ Up to 4 hours</li>
-                        <li>✓ Deep cleaning included</li>
-                        <li>✓ 2 bathrooms</li>
-                        <li>✓ 3-4 bedrooms</li>
-                    </ul>
-                    <button class="cta-button" onclick="document.getElementById('quote-modal').showModal()">Get Quote</button>
-                </div>
-                <div class="pricing-card">
-                    <h3>Premium</h3>
-                    <p class="price-tag">$199<span>/visit</span></p>
-                    <ul class="pricing-features">
-                        <li>✓ Up to 6 hours</li>
-                        <li>✓ Complete deep clean</li>
-                        <li>✓ 3+ bathrooms</li>
-                        <li>✓ Full house detail</li>
-                    </ul>
-                    <button class="cta-button secondary-cta" onclick="document.getElementById('quote-modal').showModal()">Get Quote</button>
+        <section id="services" class="services" aria-labelledby="services-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="services-title" class="section-title">Our Cleaning Services</h2>
+                    <p class="section-subtitle">Comprehensive cleaning solutions for every need — from regular maintenance to deep sanitization</p>
+                </header>
+                
+                <div class="services-grid">
+                    <article class="service-card" tabindex="0">
+                        <div class="service-icon" aria-hidden="true">🏠</div>
+                        <h3>Residential Cleaning</h3>
+                        <p>Weekly or bi-weekly cleaning for Oregon homes. Kitchens, bathrooms, bedrooms, living areas — every corner detailed to perfection.</p>
+                        <ul class="service-features">
+                            <li>Dust and vacuum all rooms</li>
+                            <li>Sanitize kitchens and bathrooms</li>
+                            <li>Floor care and polishing</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card" tabindex="0">
+                        <div class="service-icon" aria-hidden="true">🏢</div>
+                        <h3>Commercial Cleaning</h3>
+                        <p>Keep your Portland office or business spotless. Flexible scheduling around your hours — early mornings, evenings, or weekends.</p>
+                        <ul class="service-features">
+                            <li>Workstation sanitization</li>
+                            <li>Common area cleaning</li>
+                            <li>Restroom maintenance</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card" tabindex="0">
+                        <div class="service-icon" aria-hidden="true">✨</div>
+                        <h3>Deep Cleaning</h3>
+                        <p>Thorough top-to-bottom cleaning for those times when your space needs extra attention. Perfect for spring refresh or special occasions.</p>
+                        <ul class="service-features">
+                            <li>Inside cabinets and appliances</li>
+                            <li>Baseboards and edges</li>
+                            <li>Light fixtures and ceiling fans</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card" tabindex="0">
+                        <div class="service-icon" aria-hidden="true">📦</div>
+                        <h3>Move-In/Move-Out</h3>
+                        <p>Make your Oregon move seamless. We ensure your new place is move-in ready or your old place is spotless for inspection.</p>
+                        <ul class="service-features">
+                            <li>Complete interior cleaning</li>
+                            <li>Appliance cleaning inside/out</li>
+                            <li>Window and track cleaning</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-us" class="why-us">
-        <div class="container">
-            <h2 class="section-title">Why Choose SparkClean?</h2>
-            
-            <div class="trust-points">
-                <div class="trust-card">
-                    <div class="trust-number">🛡️</div>
-                    <h3>Fully Insured & Bonded</h3>
-                    <p>Your peace of mind is our priority. We're fully insured and bonded for your protection.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-number">👥</div>
-                    <h3>Experienced Team</h3>
-                    <p>Our team has 10+ years of professional cleaning experience. We know what it takes to get results.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-number">⭐</div>
-                    <h3>100% Satisfaction Guaranteed</h3>
-                    <p>If you're not completely satisfied, we'll make it right. Your happiness is our guarantee.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-number">📋</div>
-                    <h3>Eco-Friendly Products</h3>
-                    <p>We use safe, environmentally-friendly cleaning products. Great for your family and the planet.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-number">🔒</div>
-                    <h3>Background Checked</h3>
-                    <p>All our team members are thoroughly background checked for your safety and security.</p>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-number">📱</div>
-                    <h3>Easy Online Booking</h3>
-                    <p>Book your cleaning in minutes. Get instant confirmation and track your appointment online.</p>
+        <section id="how-it-works" class="how-it-works" aria-labelledby="how-it-works-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="how-it-works-title" class="section-title">How It Works</h2>
+                    <p class="section-subtitle">Getting a spotless space is just three simple steps away</p>
+                </header>
+                
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <div class="step-icon" aria-hidden="true">📝</div>
+                        <h3>Request a Quote</h3>
+                        <p>Fill out our quick form or call us. Tell us about your space and cleaning needs — we'll respond within 24 hours.</p>
+                    </div>
+                    
+                    <div class="step-connector" aria-hidden="true"></div>
+                    
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <div class="step-icon" aria-hidden="true">📅</div>
+                        <h3>Schedule Your Cleaning</h3>
+                        <p>Pick a date and time that works for you. We'll confirm your appointment and send our team of trained cleaners.</p>
+                    </div>
+                    
+                    <div class="step-connector" aria-hidden="true"></div>
+                    
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <div class="step-icon" aria-hidden="true">🎉</div>
+                        <h3>Enjoy Your Spotless Space</h3>
+                        <p>Our team does the heavy lifting. You come home to a fresh, clean home — backed by our 100% satisfaction guarantee.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"SparkClean transformed our home! They were professional, thorough, and left everything sparkling. Highly recommend!"</p>
-                    <p class="testimonial-author">— Maria Rodriguez, Miami</p>
+        <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="pricing-title" class="section-title">Transparent Pricing</h2>
+                    <p class="section-subtitle">Starting at $79 — final quote depends on property size and condition</p>
+                </header>
+                
+                <div class="pricing-disclaimer">
+                    <svg class="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <p>Every home is different. <strong>Request a free quote</strong> and we'll provide an exact price based on your property's square footage, number of rooms, and current condition. No obligations.</p>
                 </div>
-                <div class="testimonial-card">
-                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Our office has never looked better. The team is reliable and always on time. Perfect for our business needs."</p>
-                    <p class="testimonial-author">— James Chen, Business Owner</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"After moving into our new home, SparkClean did a move-in cleaning. Every detail was perfect. Worth every penny!"</p>
-                    <p class="testimonial-author">— Sarah Thompson, Miami</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"I've used SparkClean for 2 years now. Consistent quality, friendly staff, and they always respect my home."</p>
-                    <p class="testimonial-author">— David Martinez, Coral Gables</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Best cleaning service in Miami! Professional, trustworthy, and they handle special requests perfectly."</p>
-                    <p class="testimonial-author">— Lisa Anderson, Miami</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Deep clean before our family visit was amazing. Every corner was spotless. Definitely booking again!"</p>
-                    <p class="testimonial-author">— Robert Foster, Miami</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Essential Clean</h3>
+                        <p class="price-tag">From <strong>$79</strong><span>/visit</span></p>
+                        <ul class="pricing-features">
+                            <li>Up to 2 hours service</li>
+                            <li>General surface cleaning</li>
+                            <li>1 bathroom sanitized</li>
+                            <li>1-2 bedrooms</li>
+                            <li>Kitchen surfaces</li>
+                            <li>Floor vacuum/mop</li>
+                        </ul>
+                        <button class="cta-button secondary-cta" onclick="document.getElementById('quote-modal').showModal()" aria-label="Get quote for Essential Clean service">
+                            Get Quote
+                        </button>
+                    </div>
+                    
+                    <div class="pricing-card featured">
+                        <div class="featured-badge" aria-label="Most popular option">Most Popular</div>
+                        <h3>Complete Clean</h3>
+                        <p class="price-tag">From <strong>$129</strong><span>/visit</span></p>
+                        <ul class="pricing-features">
+                            <li>Up to 4 hours service</li>
+                            <li>Deep surface cleaning</li>
+                            <li>2 bathrooms detailed</li>
+                            <li>3-4 bedrooms</li>
+                            <li>Kitchen deep clean</li>
+                            <li>All floors polished</li>
+                        </ul>
+                        <button class="cta-button" onclick="document.getElementById('quote-modal').showModal()" aria-label="Get quote for Complete Clean service">
+                            Get Quote
+                        </button>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Premium Detail</h3>
+                        <p class="price-tag">From <strong>$199</strong><span>/visit</span></p>
+                        <ul class="pricing-features">
+                            <li>Up to 6 hours service</li>
+                            <li>Full deep clean</li>
+                            <li>3+ bathrooms</li>
+                            <li>5+ bedrooms</li>
+                            <li>Appliances inside/out</li>
+                            <li>Baseboards and edges</li>
+                        </ul>
+                        <button class="cta-button secondary-cta" onclick="document.getElementById('quote-modal').showModal()" aria-label="Get quote for Premium Detail service">
+                            Get Quote
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta-banner">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Experience the SparkClean Difference?</h2>
-                <p>Book your cleaning today and enjoy a fresh, spotless home or office</p>
-                <button class="cta-button large-cta" onclick="document.getElementById('quote-modal').showModal()">Get a Free Quote Now</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>📞 Call Us</h3>
-                        <p><a href="tel:+13055551234">(305) 555-1234</a></p>
-                        <p class="contact-hours">Mon-Fri: 8AM-6PM | Sat-Sun: 9AM-5PM</p>
+        <section class="before-after" aria-labelledby="before-after-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="before-after-title" class="section-title">See the Difference We Make</h2>
+                    <p class="section-subtitle">Real results from real Oregon homes</p>
+                </header>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-pair">
+                        <div class="comparison-image before">
+                            <img src="https://images.unsplash.com/photo-1556911220-bff25f51aa64?w=500&h=350&fit=crop" 
+                                 alt="Kitchen before cleaning - sink full of dirty dishes and cluttered counter"
+                                 loading="lazy"
+                                 width="500"
+                                 height="350">
+                            <div class="comparison-label">Before</div>
+                        </div>
+                        <div class="comparison-image after">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=350&fit=crop" 
+                                 alt="Kitchen after SparkClean treatment - sparkling clean sink and gleaming counters"
+                                 loading="lazy"
+                                 width="500"
+                                 height="350">
+                            <div class="comparison-label">After</div>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <h3>📧 Email Us</h3>
-                        <p><a href="mailto:hello@sparkclean.com">hello@sparkclean.com</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>📍 Service Area</h3>
-                        <p>Miami, Miami Beach, Coral Gables, Wynwood, Downtown Miami</p>
+                    
+                    <div class="comparison-pair">
+                        <div class="comparison-image before">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbfba?w=500&h=350&fit=crop" 
+                                 alt="Bathroom before cleaning - soap scum on tiles and fixtures needing attention"
+                                 loading="lazy"
+                                 width="500"
+                                 height="350">
+                            <div class="comparison-label">Before</div>
+                        </div>
+                        <div class="comparison-image after">
+                            <img src="https://images.unsplash.com/photo-1584622781564-1d590a6e4689?w=500&h=350&fit=crop" 
+                                 alt="Bathroom after SparkClean treatment - sparkling clean tiles and fixtures"
+                                 loading="lazy"
+                                 width="500"
+                                 height="350">
+                            <div class="comparison-label">After</div>
+                        </div>
                     </div>
                 </div>
-
-                <form class="contact-form" id="contact-form">
-                    <h3>Send us a Message</h3>
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Your Phone">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Tell us about your cleaning needs..." rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Quote Modal -->
-    <dialog id="quote-modal" class="quote-modal">
+        <section id="why-us" class="why-us" aria-labelledby="why-us-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="why-us-title" class="section-title">Why Oregon Trusts SparkClean</h2>
+                    <p class="section-subtitle">We're not just cleaners — we're your neighbors committed to making Oregon shine</p>
+                </header>
+                
+                <div class="trust-grid">
+                    <div class="trust-card">
+                        <div class="trust-icon" aria-hidden="true">🛡️</div>
+                        <h3>Fully Insured & Bonded</h3>
+                        <p>Your home is protected. We're fully insured and bonded — if anything ever goes wrong, we've got you covered.</p>
+                    </div>
+                    
+                    <div class="trust-card">
+                        <div class="trust-icon" aria-hidden="true">🔒</div>
+                        <h3>Background Checked Team</h3>
+                        <p>Every cleaner on our team undergoes comprehensive background checks. Trust isn't given — it's earned.</p>
+                    </div>
+                    
+                    <div class="trust-card">
+                        <div class="trust-icon" aria-hidden="true">⭐</div>
+                        <h3>100% Satisfaction</h3>
+                        <p>Not happy with something? We'll come back and fix it at no charge. Your satisfaction is our non-negotiable standard.</p>
+                    </div>
+                    
+                    <div class="trust-card">
+                        <div class="trust-icon" aria-hidden="true">🌿</div>
+                        <h3>Eco-Friendly Products</h3>
+                        <p>Safe for your family, pets, and the planet. We use premium green cleaning products — no harsh chemicals.</p>
+                    </div>
+                    
+                    <div class="trust-card">
+                        <div class="trust-icon" aria-hidden="true">👋</div>
+                        <h3>Consistent Cleaners</h3>
+                        <p>Request the same cleaner each time. We know your home, your preferences, and your expectations.</p>
+                    </div>
+                    
+                    <div class="trust-card">
+                        <div class="trust-icon" aria-hidden="true">📱</div>
+                        <h3>Easy Online Booking</h3>
+                        <p>Book in 60 seconds. Get instant confirmation. Manage your appointments online — hassle-free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="testimonials-title" class="section-title">What Oregon Families Say</h2>
+                    <p class="section-subtitle">Real reviews from real customers we've served since 2018</p>
+                </header>
+                
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <time class="testimonial-date" datetime="2024-03">March 2024</time>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            <p>"I'm a realtor in Lake Oswego and I've been using SparkClean for my listing prep for over two years. They consistently transform properties — from gutted rehabs to lived-in homes getting ready for market. My clients are always amazed at the results. Best cleaning crew I've ever worked with."</p>
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <cite>Michael Chen</cite>
+                            <span class="author-context">Realtor, Lake Oswego</span>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <time class="testimonial-date" datetime="2024-02">February 2024</time>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            <p>"As a busy mom with three kids, I don't have time to clean the way I want. SparkClean comes every other week and honestly? My house has never looked better consistently. Sarah, who cleans for us, is thorough and lovely. She even organizes things while she cleans. Worth every penny."</p>
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <cite>Jennifer Walsh</cite>
+                            <span class="author-context">Mother of 3, Portland</span>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <time class="testimonial-date" datetime="2024-01">January 2024</time>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            <p>"We run a dental office in downtown Portland. SparkClean handles our after-hours cleaning — they navigate around our equipment and are always done before we open. Professional, reliable, and our staff actually enjoys opening the office now because it's always so clean."</p>
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <cite>Dr. Amanda Richardson</cite>
+                            <span class="author-context">Dentist, Portland</span>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <time class="testimonial-date" datetime="2023-12">December 2023</time>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            <p>"Moved into our Beaverton home and needed a deep clean before furniture arrived. SparkClean sent a team of four and knocked out the entire 2,200 sq ft space in under 4 hours. Spotless. They even cleaned inside the kitchen cabinets. Exactly what we needed."</p>
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <cite>Tom & Lisa Nakamura</cite>
+                            <span class="author-context">New homeowners, Beaverton</span>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <time class="testimonial-date" datetime="2023-11">November 2023</time>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            <p>"I'm particular about cleaning products because of my allergies. SparkClean was great about using my suggested eco products. No reactions since they started. Plus they communicate well via text, show up on time, and do excellent work. Finally found a cleaning service that works for our family."</p>
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <cite>David Hernandez</cite>
+                            <span class="author-context">Homeowner, Lake Oswego</span>
+                        </footer>
+                    </article>
+                    
+                    <article class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                            <time class="testimonial-date" datetime="2023-10">October 2023</time>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            <p>"Holiday party prep was stressful until I hired SparkClean for a deep clean the week before. They sent a team Saturday morning, hit every room, and by afternoon my house was ready for 40 guests. The kitchen looked like it belonged in a magazine. Already booked them for the New Year party prep."</p>
+                        </blockquote>
+                        <footer class="testimonial-author">
+                            <cite>Rachel Stone</cite>
+                            <span class="author-context">Portland resident</span>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title">Ready for a Spotless Oregon Home?</h2>
+                    <p>Book your first cleaning today and discover why 120+ Oregon families trust SparkClean</p>
+                    <button class="cta-button large-cta" onclick="document.getElementById('quote-modal').showModal()" aria-label="Open form to request a free quote">
+                        Get Your Free Quote
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="contact-title" class="section-title">Get in Touch</h2>
+                    <p class="section-subtitle">Questions? We'd love to hear from you</p>
+                </header>
+                
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3><span aria-hidden="true">📞</span> Call or Text</h3>
+                            <p><a href="tel:+15035557890" aria-label="Call us at (503) 555-7890">(503) 555-7890</a></p>
+                            <p class="contact-hours">Mon–Fri: 8AM–6PM | Sat–Sun: 9AM–5PM</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3><span aria-hidden="true">📧</span> Email</h3>
+                            <p><a href="mailto:hello@sparkcleanoregon.com" aria-label="Email us at hello@sparkcleanoregon.com">hello@sparkcleanoregon.com</a></p>
+                            <p class="contact-note">We respond within 24 hours</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3><span aria-hidden="true">📍</span> Service Areas</h3>
+                            <p>Portland, Beaverton, Lake Oswego, Eugene, Salem, Tigard, Hillsboro, Gresham</p>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                        <h3>Send Us a Message</h3>
+                        
+                        <div class="form-group">
+                            <label for="contact-name">Your Name <span class="required" aria-hidden="true">*</span></label>
+                            <input type="text" id="contact-name" name="name" required aria-required="true" autocomplete="name" aria-label="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                            <input type="email" id="contact-email" name="email" required aria-required="true" autocomplete="email" aria-label="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number</label>
+                            <input type="tel" id="contact-phone" name="phone" autocomplete="tel" aria-label="Enter your phone number (optional)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Your Message <span class="required" aria-hidden="true">*</span></label>
+                            <textarea id="contact-message" name="message" rows="4" required aria-required="true" aria-label="Tell us about your cleaning needs"></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="New Contact Form Submission - SparkClean Website">
+                        
+                        <button type="submit" class="cta-button full-width" aria-label="Submit your message">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" aria-hidden="true">Sending...</span>
+                        </button>
+                        
+                        <div class="form-status" role="alert" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="quote-modal" class="quote-modal" aria-labelledby="modal-title" aria-describedby="modal-description">
         <div class="modal-content">
-            <button class="modal-close" onclick="document.getElementById('quote-modal').close()">✕</button>
-            <h2>Get Your Free Quote</h2>
-            <p>Tell us about your cleaning needs and we'll provide a personalized quote within 24 hours.</p>
+            <button type="button" class="modal-close" aria-label="Close quote form">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
             
-            <form class="quote-form" id="quote-form">
+            <h2 id="modal-title">Get Your Free Quote</h2>
+            <p id="modal-description">Tell us about your cleaning needs and we'll send you a personalized quote within 24 hours — no obligation.</p>
+            
+            <form class="quote-form" id="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
                 <div class="form-group">
-                    <label>Your Name *</label>
-                    <input type="text" placeholder="John Doe" required>
+                    <label for="quote-name">Your Name <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="quote-name" name="name" required aria-required="true" autocomplete="name" aria-label="Enter your full name">
                 </div>
+                
                 <div class="form-group">
-                    <label>Email *</label>
-                    <input type="email" placeholder="john@example.com" required>
+                    <label for="quote-email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                    <input type="email" id="quote-email" name="email" required aria-required="true" autocomplete="email" aria-label="Enter your email address">
                 </div>
+                
                 <div class="form-group">
-                    <label>Phone *</label>
-                    <input type="tel" placeholder="(305) 555-1234" required>
+                    <label for="quote-phone">Phone Number <span class="required" aria-hidden="true">*</span></label>
+                    <input type="tel" id="quote-phone" name="phone" required aria-required="true" autocomplete="tel" aria-label="Enter your phone number for us to contact you">
                 </div>
+                
                 <div class="form-group">
-                    <label>Service Type *</label>
-                    <select required>
+                    <label for="quote-service">Service Type <span class="required" aria-hidden="true">*</span></label>
+                    <select id="quote-service" name="service_type" required aria-required="true" aria-label="Select the type of cleaning service you need">
                         <option value="">Select a service...</option>
-                        <option value="home">Home Cleaning</option>
-                        <option value="office">Office Cleaning</option>
-                        <option value="deep">Deep Cleaning</option>
-                        <option value="moveio">Move-In/Move-Out</option>
+                        <option value="residential">Residential Cleaning</option>
+                        <option value="commercial">Commercial Cleaning</option>
+                        <option value="deep_clean">Deep Cleaning</option>
+                        <option value="move_in_out">Move-In/Move-Out</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label>Property Size *</label>
-                    <select required>
+                    <label for="quote-size">Property Size <span class="required" aria-hidden="true">*</span></label>
+                    <select id="quote-size" name="property_size" required aria-required="true" aria-label="Select your property size">
                         <option value="">Select size...</option>
-                        <option value="small">1-2 bedrooms (Under 1,000 sq ft)</option>
-                        <option value="medium">3-4 bedrooms (1,000-2,500 sq ft)</option>
-                        <option value="large">5+ bedrooms (2,500+ sq ft)</option>
+                        <option value="small">Small (1-2 BR, under 1,000 sq ft)</option>
+                        <option value="medium">Medium (3-4 BR, 1,000-2,500 sq ft)</option>
+                        <option value="large">Large (5+ BR, 2,500+ sq ft)</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label>Additional Details</label>
-                    <textarea placeholder="Any special requests or details?" rows="3"></textarea>
+                    <label for="quote-details">Additional Details</label>
+                    <textarea id="quote-details" name="details" rows="3" aria-label="Any special requests or additional information about your cleaning needs (optional)"></textarea>
                 </div>
-                <button type="submit" class="cta-button full-width">Get My Free Quote</button>
+                
+                <input type="hidden" name="_subject" value="New Quote Request - SparkClean Website">
+                
+                <button type="submit" class="cta-button full-width" aria-label="Submit quote request">
+                    <span class="btn-text">Get My Free Quote</span>
+                    <span class="btn-loading" aria-hidden="true">Sending...</span>
+                </button>
+                
+                <div class="form-status" role="alert" aria-live="polite"></div>
             </form>
         </div>
     </dialog>
 
-    <!-- Sticky CTA Button -->
-    <button class="sticky-cta" onclick="document.getElementById('quote-modal').showModal()" title="Get a free quote">Get Quote</button>
+    <button type="button" class="sticky-cta" aria-label="Get a free quote — open quote form">
+        Get Quote
+    </button>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 SparkClean Services. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
-            <p>Professional Cleaning Services in Miami, FL</p>
+            <div class="footer-brand">
+                <span class="logo-icon" aria-hidden="true">✨</span>
+                <span class="logo-text">SparkClean</span>
+            </div>
+            <p class="footer-tagline">Professional Cleaning Services in Oregon</p>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="#services">Services</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p class="footer-copyright">&copy; 2024 SparkClean Services. All rights reserved.</p>
+            <p class="footer-legal">
+                <a href="#privacy">Privacy Policy</a> · <a href="#terms">Terms of Service</a>
+            </p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
